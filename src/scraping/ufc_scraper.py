@@ -3,12 +3,12 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import time
 
-BASE_URL = "http://ufcstats.com/statistics/events/completed/?page={}" #use .format to get the page
+BASE_URL = "http://ufcstats.com/statistics/events/completed?page={}" #use .format to get the page
 
 def get_event_links(pages=2, delay=1):
     all_event_links = []
 
-    for page in range(pages):
+    for page in range(1, pages+1):
         URL = BASE_URL.format(page)
         request = requests.get(URL)
         soup = BeautifulSoup(request.content, 'html.parser')
@@ -21,3 +21,6 @@ def get_event_links(pages=2, delay=1):
         time.sleep(delay)
 
     return all_event_links
+
+
+
