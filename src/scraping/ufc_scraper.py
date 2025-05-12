@@ -20,4 +20,4 @@ def get_event_links(pages=2, delay=1):
 
         time.sleep(delay)
 
-    return event_links
+    return all_event_links
