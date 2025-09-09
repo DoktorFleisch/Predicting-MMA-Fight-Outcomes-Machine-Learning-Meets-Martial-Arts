@@ -26,7 +26,7 @@ def get_fighting_links(event_link, delay=1):
     fighting_links = []
 
     request = requests.get(event_link)
-    soup = BeautifulSoup(request.content, 'html_parser')
+    soup = BeautifulSoup(request.content, 'html.parser')
 
     links = soup.select('a.blink')
 
@@ -36,7 +36,7 @@ def get_fighting_links(event_link, delay=1):
 
 def get_fighting_data(fight_link):
     request = requests.get(fight_link)
-    soup = BeautifulSoup(request.content, 'html_parser')
+    soup = BeautifulSoup(request.content, 'html.parser')
 
     rows = soup.select('tr.b-fight-details__table-row tr')
 
